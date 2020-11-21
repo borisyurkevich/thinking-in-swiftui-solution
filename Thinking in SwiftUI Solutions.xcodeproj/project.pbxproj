@@ -11,6 +11,15 @@
 		A11CB2512569CDC8008240DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB2502569CDC8008240DB /* ContentView.swift */; };
 		A11CB2532569CDCA008240DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A11CB2522569CDCA008240DB /* Assets.xcassets */; };
 		A11CB2562569CDCA008240DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A11CB2552569CDCA008240DB /* Preview Assets.xcassets */; };
+		A11CB25F2569CDE8008240DB /* Collapsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB25E2569CDE8008240DB /* Collapsible.swift */; };
+		A11CB2642569CE41008240DB /* MyStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB2622569CE41008240DB /* MyStackView.swift */; };
+		A11CB2652569CE41008240DB /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB2632569CE41008240DB /* MaskView.swift */; };
+		A11CB2692569CE8A008240DB /* ExpandableRectangles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB2682569CE8A008240DB /* ExpandableRectangles.swift */; };
+		A11CB26E2569D00F008240DB /* Knob.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB26D2569D00F008240DB /* Knob.swift */; };
+		A11CB2712569D0B5008240DB /* Knob is working in Resources */ = {isa = PBXBuildFile; fileRef = A11CB2702569D0B5008240DB /* Knob is working */; };
+		A11CB2762569D106008240DB /* ViewUpdates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB2752569D106008240DB /* ViewUpdates.swift */; };
+		A11CB27A2569D182008240DB /* Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB2782569D182008240DB /* Remote.swift */; };
+		A11CB27B2569D182008240DB /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB2792569D182008240DB /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +29,15 @@
 		A11CB2522569CDCA008240DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A11CB2552569CDCA008240DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A11CB2572569CDCA008240DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A11CB25E2569CDE8008240DB /* Collapsible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collapsible.swift; sourceTree = "<group>"; };
+		A11CB2622569CE41008240DB /* MyStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStackView.swift; sourceTree = "<group>"; };
+		A11CB2632569CE41008240DB /* MaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskView.swift; sourceTree = "<group>"; };
+		A11CB2682569CE8A008240DB /* ExpandableRectangles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableRectangles.swift; sourceTree = "<group>"; };
+		A11CB26D2569D00F008240DB /* Knob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Knob.swift; sourceTree = "<group>"; };
+		A11CB2702569D0B5008240DB /* Knob is working */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Knob is working"; sourceTree = "<group>"; };
+		A11CB2752569D106008240DB /* ViewUpdates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUpdates.swift; sourceTree = "<group>"; };
+		A11CB2782569D182008240DB /* Remote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remote.swift; sourceTree = "<group>"; };
+		A11CB2792569D182008240DB /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,10 +70,12 @@
 		A11CB24D2569CDC8008240DB /* Thinking in SwiftUI Solutions */ = {
 			isa = PBXGroup;
 			children = (
-				A11CB24E2569CDC8008240DB /* Thinking_in_SwiftUI_SolutionsApp.swift */,
-				A11CB2502569CDC8008240DB /* ContentView.swift */,
-				A11CB2522569CDCA008240DB /* Assets.xcassets */,
-				A11CB2572569CDCA008240DB /* Info.plist */,
+				A11CB27D2569D189008240DB /* Chapter 2 */,
+				A11CB27E2569D19A008240DB /* Chapter 3 */,
+				A11CB27F2569D19E008240DB /* Chapter 4 */,
+				A11CB2802569D1A3008240DB /* Chapter 5 */,
+				A11CB2812569D1B9008240DB /* Other */,
+				A11CB2612569CE34008240DB /* Playground */,
 				A11CB2542569CDCA008240DB /* Preview Content */,
 			);
 			path = "Thinking in SwiftUI Solutions";
@@ -67,6 +87,61 @@
 				A11CB2552569CDCA008240DB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A11CB2612569CE34008240DB /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				A11CB2632569CE41008240DB /* MaskView.swift */,
+				A11CB2622569CE41008240DB /* MyStackView.swift */,
+				A11CB2682569CE8A008240DB /* ExpandableRectangles.swift */,
+			);
+			path = Playground;
+			sourceTree = "<group>";
+		};
+		A11CB27D2569D189008240DB /* Chapter 2 */ = {
+			isa = PBXGroup;
+			children = (
+				A11CB2752569D106008240DB /* ViewUpdates.swift */,
+				A11CB2792569D182008240DB /* Photo.swift */,
+				A11CB2782569D182008240DB /* Remote.swift */,
+			);
+			path = "Chapter 2";
+			sourceTree = "<group>";
+		};
+		A11CB27E2569D19A008240DB /* Chapter 3 */ = {
+			isa = PBXGroup;
+			children = (
+				A11CB2702569D0B5008240DB /* Knob is working */,
+				A11CB26D2569D00F008240DB /* Knob.swift */,
+			);
+			path = "Chapter 3";
+			sourceTree = "<group>";
+		};
+		A11CB27F2569D19E008240DB /* Chapter 4 */ = {
+			isa = PBXGroup;
+			children = (
+				A11CB25E2569CDE8008240DB /* Collapsible.swift */,
+			);
+			path = "Chapter 4";
+			sourceTree = "<group>";
+		};
+		A11CB2802569D1A3008240DB /* Chapter 5 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Chapter 5";
+			sourceTree = "<group>";
+		};
+		A11CB2812569D1B9008240DB /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				A11CB24E2569CDC8008240DB /* Thinking_in_SwiftUI_SolutionsApp.swift */,
+				A11CB2502569CDC8008240DB /* ContentView.swift */,
+				A11CB2522569CDCA008240DB /* Assets.xcassets */,
+				A11CB2572569CDCA008240DB /* Info.plist */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A11CB2562569CDCA008240DB /* Preview Assets.xcassets in Resources */,
+				A11CB2712569D0B5008240DB /* Knob is working in Resources */,
 				A11CB2532569CDCA008240DB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,8 +214,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A11CB2652569CE41008240DB /* MaskView.swift in Sources */,
+				A11CB2692569CE8A008240DB /* ExpandableRectangles.swift in Sources */,
+				A11CB27A2569D182008240DB /* Remote.swift in Sources */,
 				A11CB2512569CDC8008240DB /* ContentView.swift in Sources */,
+				A11CB27B2569D182008240DB /* Photo.swift in Sources */,
 				A11CB24F2569CDC8008240DB /* Thinking_in_SwiftUI_SolutionsApp.swift in Sources */,
+				A11CB25F2569CDE8008240DB /* Collapsible.swift in Sources */,
+				A11CB2642569CE41008240DB /* MyStackView.swift in Sources */,
+				A11CB2762569D106008240DB /* ViewUpdates.swift in Sources */,
+				A11CB26E2569D00F008240DB /* Knob.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
