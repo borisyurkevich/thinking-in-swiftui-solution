@@ -20,6 +20,7 @@
 		A11CB2762569D106008240DB /* ViewUpdates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB2752569D106008240DB /* ViewUpdates.swift */; };
 		A11CB27A2569D182008240DB /* Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB2782569D182008240DB /* Remote.swift */; };
 		A11CB27B2569D182008240DB /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB2792569D182008240DB /* Photo.swift */; };
+		A181A15B256B70E200A098FC /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A181A15A256B70E200A098FC /* Badge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		A11CB2752569D106008240DB /* ViewUpdates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUpdates.swift; sourceTree = "<group>"; };
 		A11CB2782569D182008240DB /* Remote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remote.swift; sourceTree = "<group>"; };
 		A11CB2792569D182008240DB /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		A181A15A256B70E200A098FC /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				A11CB25E2569CDE8008240DB /* Collapsible.swift */,
+				A181A15A256B70E200A098FC /* Badge.swift */,
 			);
 			path = "Chapter 4";
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			files = (
 				A11CB2652569CE41008240DB /* MaskView.swift in Sources */,
 				A11CB2692569CE8A008240DB /* ExpandableRectangles.swift in Sources */,
+				A181A15B256B70E200A098FC /* Badge.swift in Sources */,
 				A11CB27A2569D182008240DB /* Remote.swift in Sources */,
 				A11CB2512569CDC8008240DB /* ContentView.swift in Sources */,
 				A11CB27B2569D182008240DB /* Photo.swift in Sources */,
