@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BadgeParent: View {
     
-    @State var count: Int = 4
+    @State var count: Int = 6
     
     var body: some View {
         Text("Hello")
@@ -27,22 +27,24 @@ struct Badge: View {
     var colour = Color.red
     var size: CGFloat = 20
     
-    var count: Int = 0
+    let count: Int
     
     var isHidden: Bool {
-        count == 0
+        count != 0
     }
     
     var body: some View {
-        Text("\(count)")
-            .foregroundColor(Color.white)
-            .lineLimit(1)
-            .padding(6)
-            .frame(minWidth: size)
-            .background(
-                Circle()
-                    .fill(colour)
-            )
+        if isHidden {
+            Text("\(count)")
+                .foregroundColor(Color.white)
+                .lineLimit(1)
+                .padding(6)
+                .frame(minWidth: size)
+                .background(
+                    Circle()
+                        .fill(colour)
+                )
+        }
     }
 }
 
@@ -50,7 +52,7 @@ struct Badge_Previews: PreviewProvider {
     static var previews: some View {
         BadgeParent()
             .previewLayout(.sizeThatFits)
-        Badge()
+        Badge(count: 1)
             .previewLayout(.sizeThatFits)
     }
 }
