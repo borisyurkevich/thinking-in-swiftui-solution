@@ -7,9 +7,19 @@
 
 import SwiftUI
 
+extension View {
+    
+    func badge(count: Int) -> some View {
+        overlay(Badge(count: count)
+                    .offset(x: 12, y: -12),
+                alignment: .topTrailing)
+            .padding()
+    }
+}
+
 struct BadgeParent: View {
     
-    @State var count: Int = 6
+    @State var count: Int = 10
     
     var body: some View {
         Text("Hello")
@@ -17,9 +27,7 @@ struct BadgeParent: View {
             .multilineTextAlignment(.center)
             .padding(6)
             .background(Color.gray)
-            .overlay(Badge(count: count).offset(x: 10, y: -12),
-                     alignment: .trailing)
-            .padding()
+            .badge(count: count)
     }
 }
 
