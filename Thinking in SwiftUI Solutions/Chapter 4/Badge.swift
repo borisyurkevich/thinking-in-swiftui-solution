@@ -36,6 +36,7 @@ struct Badge: View {
     var body: some View {
         if isHidden {
             Text("\(count)")
+                .font(.caption)
                 .foregroundColor(Color.white)
                 .lineLimit(1)
                 .padding(6)
