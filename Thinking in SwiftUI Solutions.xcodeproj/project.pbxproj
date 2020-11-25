@@ -21,6 +21,7 @@
 		A11CB27A2569D182008240DB /* Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB2782569D182008240DB /* Remote.swift */; };
 		A11CB27B2569D182008240DB /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB2792569D182008240DB /* Photo.swift */; };
 		A181A15B256B70E200A098FC /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A181A15A256B70E200A098FC /* Badge.swift */; };
+		A18DE16D256DBDC80058F642 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18DE16C256DBDC80058F642 /* Table.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		A11CB2782569D182008240DB /* Remote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remote.swift; sourceTree = "<group>"; };
 		A11CB2792569D182008240DB /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		A181A15A256B70E200A098FC /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		A18DE16C256DBDC80058F642 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		A11CB2802569D1A3008240DB /* Chapter 5 */ = {
 			isa = PBXGroup;
 			children = (
+				A18DE16C256DBDC80058F642 /* Table.swift */,
 			);
 			path = "Chapter 5";
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				A11CB27A2569D182008240DB /* Remote.swift in Sources */,
 				A11CB2512569CDC8008240DB /* ContentView.swift in Sources */,
 				A11CB27B2569D182008240DB /* Photo.swift in Sources */,
+				A18DE16D256DBDC80058F642 /* Table.swift in Sources */,
 				A11CB24F2569CDC8008240DB /* Thinking_in_SwiftUI_SolutionsApp.swift in Sources */,
 				A11CB25F2569CDE8008240DB /* Collapsible.swift in Sources */,
 				A11CB2642569CE41008240DB /* MyStackView.swift in Sources */,
