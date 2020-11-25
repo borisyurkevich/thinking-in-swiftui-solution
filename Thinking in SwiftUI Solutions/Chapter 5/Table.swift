@@ -36,7 +36,7 @@ struct Table: View {
         }
     }
     
-    @State var maxWidth:[CGFloat] = [200, 100, 100]
+    @State var maxWidth: [Int: CGFloat] = [:]
     
     var body: some View {
         HStack() {
@@ -46,11 +46,10 @@ struct Table: View {
                         cells[idx2][idx]
                             .background(GeometryReader { proxy in
                                 colorForIndex(idx: idx)
-                                    .preference(key: ColumnWidth.self, value: proxy.size.width)
+                                    .preference(key: ColumnWidth.self, value: [idx: proxy.size.width])
                             })
                             .onPreferenceChange(ColumnWidth.self) {
-                                self.maxWidth[idx] = $0
-                                
+                                self.maxWidth = $0
                             }
                     }
                 }.frame(width: maxWidth[idx])
@@ -61,12 +60,12 @@ struct Table: View {
 
 struct ColumnWidth: PreferenceKey {
     
-    static let defaultValue: CGFloat = 100
+    static let defaultValue: [Int:CGFloat] = [:]
         
-    static func reduce(value: inout CGFloat,
-                       nextValue: () -> CGFloat) {
-        value = max(value, nextValue())
-    }// this suppose to combine all the values and find the largest
+    static func reduce(value: inout Value,
+                       nextValue: () -> Value) {
+        value.merge(nextValue(), uniquingKeysWith: max)
+    }
 }
 
 struct Chapter5_Previews: PreviewProvider {
