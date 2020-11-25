@@ -36,43 +36,54 @@ struct Table: View {
         }
     }
     
-    @State var maxWidth: CGFloat = 10
+    func cellFor(row: Int, column: Int) -> some View {
+        cells[row][column]
+            .widthPreference(column: column)
+            .frame(width: columnWidth[column], alignment: .leading)
+            .padding(5)
+    }
+    
+    @State var columnWidth: [Int: CGFloat] = [:]
     
     var body: some View {
-        VStack(alignment:.leading) {
-            ForEach(cells.indices) { idx in
-                HStack() {
-                    ForEach(cells.indices) { idx2 in
-                        cells[idx][idx2]
+        VStack(alignment: .leading) {
+            ForEach(cells.indices) { row in
+                HStack(alignment: .top) {
+                    ForEach(self.cells[row].indices) { column in
+                        self.cellFor(row: row, column: column)
                     }
-                }.background(GeometryReader { proxy in
-                    colorForIndex(idx: idx)
-                        .preference(key: ColumnWidth.self, value: proxy.size.width)
-                })
-                .onPreferenceChange(ColumnWidth.self) {
-                    self.maxWidth = $0
-                    print(self.maxWidth)
                 }
+                .background(row.isMultiple(of: 2) ?
+                                Color(.secondarySystemBackground) : Color(.systemBackground)
+                )
             }
         }
+        .onPreferenceChange(WidthPreference.self) { self.columnWidth = $0 }
     }
-        
-    // MARK: - Helpers
-    
 }
 
-struct ColumnWidth: PreferenceKey {
+struct WidthPreference: PreferenceKey {
     
-    static let defaultValue: CGFloat = 20
+    static let defaultValue: [Int: CGFloat] = [:]
         
-    static func reduce(value: inout CGFloat,
-                       nextValue: () -> CGFloat) {
+    static func reduce(value: inout Value,
+                       nextValue: () -> Value) {
+        value.merge(nextValue(), uniquingKeysWith: max)
+    }
+}
+
+
+extension View {
+    func widthPreference(column: Int) -> some View {
+        background(GeometryReader { proxy in
+            Color.clear.preference(key: WidthPreference.self,
+                                   value: [column: proxy.size.width])
+        })
     }
 }
 
 struct Chapter5_Previews: PreviewProvider {
     static var previews: some View {
         Chapter5()
-            .previewLayout(.sizeThatFits)
     }
 }
