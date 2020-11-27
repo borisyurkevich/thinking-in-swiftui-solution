@@ -10,12 +10,12 @@ import SwiftUI
 struct Chapter5: View {
     
     var cells = [
-        [Cell(""), Cell("Monday", isBold: true), Cell("Tuesday", isBold: true),
-         Cell("Wednesday", isBold: true)],
-        
-        [Cell("Berlin", isBold: true), Cell("Cloudy"), Cell("Mostly\nSunny"), Cell("Sunny")],
-        
-        [Cell("London", isBold: true), Cell("Heavy Rain"), Cell("Cloudy"), Cell("Sunny")]
+        [Cell(Text("")), Cell(Text("Monday").bold()), Cell(Text("Tuesday").bold()),
+         Cell(Text("Wednesday").bold())],
+
+        [Cell(Text("Berlin").bold()), Cell(Text("Cloudy")), Cell(Text("Mostly\nSunny")), Cell(Text("Sunny"))],
+
+        [Cell(Text("London").bold()), Cell(Text("Heavy Rain")), Cell(Text("Cloudy")), Cell(Text("Sunny"))]
     ]
 
     var body: some View {
@@ -24,41 +24,29 @@ struct Chapter5: View {
     }
 }
 
-struct Cell: View {
+struct Cell<Content: View>: View {
     
-    let content: String
-    
-    init(_ content: String, isBold: Bool = false) {
+    init(_ content: Content) {
         self.content = content
-        self.isBold = isBold
     }
     
+    let content: Content
     
     @State var isSelected: Bool = false
     
-    let isBold: Bool
-    
-    var text: Text {
-        if isBold {
-            return Text(content).bold()
-        } else {
-            return Text(content)
-        }
-    }
-    
     var body: some View {
         if isSelected {
-            text
+            content
                 .border(Color.blue)
         } else {
-            text
+            content
         }
     }
 }
 
 struct Table: View {
     
-    let cells: [[Cell]]
+    let cells: [[Cell<Text>]]
     
     func colorForIndex(idx: Int) -> Color {
         if idx.isMultiple(of: 2) {
@@ -115,7 +103,7 @@ extension View {
 struct Chapter5_Previews: PreviewProvider {
     static var previews: some View {
         Chapter5()
-            .preferredColorScheme(.light)
+            .preferredColorScheme(.dark)
             .previewLayout(.fixed(width: 400, height: 200))
     }
 }
