@@ -24,15 +24,33 @@ struct Chapter5: View {
     }
 }
 
+struct Cell: View {
+    
+    let content: Text
+    
+    @State var isSelected: Bool = false
+    
+    var body: some View {
+        VStack { // todo: try to remove
+            if isSelected {
+                content
+                    .border(Color.blue)
+            } else {
+                content
+            }
+        }
+    }
+}
+
 struct Table: View {
     
     let cells: [[Text]]
     
     func colorForIndex(idx: Int) -> Color {
-        if idx % 2 == 0 {
-            return Color.white
+        if idx.isMultiple(of: 2) {
+            return Color(.secondarySystemGroupedBackground)
         } else {
-            return Color.gray
+            return Color(.systemGroupedBackground)
         }
     }
     
@@ -53,9 +71,7 @@ struct Table: View {
                         self.cellFor(row: row, column: column)
                     }
                 }
-                .background(row.isMultiple(of: 2) ?
-                                Color(.secondarySystemBackground) : Color(.systemBackground)
-                )
+                .background(colorForIndex(idx: row))
             }
         }
         .onPreferenceChange(WidthPreference.self) { self.columnWidth = $0 }
@@ -85,5 +101,7 @@ extension View {
 struct Chapter5_Previews: PreviewProvider {
     static var previews: some View {
         Chapter5()
+            .preferredColorScheme(.light)
+            .previewLayout(.fixed(width: 400, height: 200))
     }
 }
