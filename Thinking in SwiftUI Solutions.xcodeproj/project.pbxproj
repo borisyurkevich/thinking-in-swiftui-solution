@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A11CB24F2569CDC8008240DB /* Thinking_in_SwiftUI_SolutionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB24E2569CDC8008240DB /* Thinking_in_SwiftUI_SolutionsApp.swift */; };
-		A11CB2512569CDC8008240DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB2502569CDC8008240DB /* ContentView.swift */; };
 		A11CB2532569CDCA008240DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A11CB2522569CDCA008240DB /* Assets.xcassets */; };
 		A11CB2562569CDCA008240DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A11CB2552569CDCA008240DB /* Preview Assets.xcassets */; };
 		A11CB25F2569CDE8008240DB /* Collapsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB25E2569CDE8008240DB /* Collapsible.swift */; };
@@ -27,7 +26,6 @@
 /* Begin PBXFileReference section */
 		A11CB24B2569CDC8008240DB /* Thinking in SwiftUI Solutions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thinking in SwiftUI Solutions.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A11CB24E2569CDC8008240DB /* Thinking_in_SwiftUI_SolutionsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thinking_in_SwiftUI_SolutionsApp.swift; sourceTree = "<group>"; };
-		A11CB2502569CDC8008240DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A11CB2522569CDCA008240DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A11CB2552569CDCA008240DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A11CB2572569CDCA008240DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,6 +72,7 @@
 		A11CB24D2569CDC8008240DB /* Thinking in SwiftUI Solutions */ = {
 			isa = PBXGroup;
 			children = (
+				A11CB24E2569CDC8008240DB /* Thinking_in_SwiftUI_SolutionsApp.swift */,
 				A11CB27D2569D189008240DB /* Chapter 2 */,
 				A11CB27E2569D19A008240DB /* Chapter 3 */,
 				A11CB27F2569D19E008240DB /* Chapter 4 */,
@@ -142,8 +141,6 @@
 		A11CB2812569D1B9008240DB /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				A11CB24E2569CDC8008240DB /* Thinking_in_SwiftUI_SolutionsApp.swift */,
-				A11CB2502569CDC8008240DB /* ContentView.swift */,
 				A11CB2522569CDCA008240DB /* Assets.xcassets */,
 				A11CB2572569CDCA008240DB /* Info.plist */,
 			);
@@ -224,7 +221,6 @@
 				A11CB2692569CE8A008240DB /* ExpandableRectangles.swift in Sources */,
 				A181A15B256B70E200A098FC /* Badge.swift in Sources */,
 				A11CB27A2569D182008240DB /* Remote.swift in Sources */,
-				A11CB2512569CDC8008240DB /* ContentView.swift in Sources */,
 				A11CB27B2569D182008240DB /* Photo.swift in Sources */,
 				A18DE16D256DBDC80058F642 /* Table.swift in Sources */,
 				A11CB24F2569CDC8008240DB /* Thinking_in_SwiftUI_SolutionsApp.swift in Sources */,

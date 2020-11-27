@@ -11,7 +11,7 @@ import SwiftUI
 struct Thinking_in_SwiftUI_SolutionsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Chapter5()
         }
     }
 }

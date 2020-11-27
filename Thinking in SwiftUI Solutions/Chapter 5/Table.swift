@@ -77,7 +77,6 @@ struct Table: View {
             .frame(width: columnWidth[column], alignment: .leading)
             .padding(5)
             .border(Color.purple)
-            .modifier(SelectedModifier(selected: row == selectedCell?.0 && column == selectedCell?.1))
     }
     
     var body: some View {
@@ -87,13 +86,30 @@ struct Table: View {
                     ForEach(self.cells[row].indices) { column in
                         self.cellFor(row: row, column: column)
                             .onTapGesture {
-                                selectedCell = (row, column)
+                                withAnimation {
+                                    selectedCell = (row, column)
+                                }
                             }
+                            .anchorPreference(key: BoundsKey.self, value: .bounds, transform: { anchor in
+                                selectedCell ?? (-1, -1) == (row, column) ? anchor : nil
+                            })
                     }
                 }
                 .background(colorForIndex(idx: row))
             }
         }
+        .overlayPreferenceValue(BoundsKey.self, { anchor in
+            if let anchor = anchor {
+                GeometryReader { proxy in
+                    Rectangle()
+                        .fill(Color.clear)
+                        .border(Color.red, width: 2)
+                        .frame(width: proxy[anchor].width, height: proxy[anchor].height)
+                        .offset(x: proxy[anchor].minX, y: proxy[anchor].minY)
+                        .frame(width: proxy[anchor].size.width, height: proxy[anchor].height, alignment: .bottomLeading)
+                }
+            }
+        })
         .onPreferenceChange(WidthPreference.self) { self.columnWidth = $0 }
     }
 }

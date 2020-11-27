@@ -13,7 +13,7 @@ struct MaskView: View {
             .fill(Color.red)
             .padding()
             .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fit/*@END_MENU_TOKEN@*/)
-            .mask(ContentView())
+            .mask(Text("Hello world"))
     }
 }
 
