@@ -10,12 +10,12 @@ import SwiftUI
 struct Chapter5: View {
     
     var cells = [
-        [Text(""), Text("Monday").bold(), Text("Tuesday").bold(),
-         Text("Wednesday").bold()],
+        [Cell(""), Cell("Monday", isBold: true), Cell("Tuesday", isBold: true),
+         Cell("Wednesday", isBold: true)],
         
-        [Text("Berlin").bold(), Text("Cloudy"), Text("Mostly\nSunny"), Text("Sunny")],
+        [Cell("Berlin", isBold: true), Cell("Cloudy"), Cell("Mostly\nSunny"), Cell("Sunny")],
         
-        [Text("London").bold(), Text("Heavy Rain"), Text("Cloudy"), Text("Sunny")]
+        [Cell("London", isBold: true), Cell("Heavy Rain"), Cell("Cloudy"), Cell("Sunny")]
     ]
 
     var body: some View {
@@ -26,25 +26,39 @@ struct Chapter5: View {
 
 struct Cell: View {
     
-    let content: Text
+    let content: String
+    
+    init(_ content: String, isBold: Bool = false) {
+        self.content = content
+        self.isBold = isBold
+    }
+    
     
     @State var isSelected: Bool = false
     
+    let isBold: Bool
+    
+    var text: Text {
+        if isBold {
+            return Text(content).bold()
+        } else {
+            return Text(content)
+        }
+    }
+    
     var body: some View {
-        VStack { // todo: try to remove
-            if isSelected {
-                content
-                    .border(Color.blue)
-            } else {
-                content
-            }
+        if isSelected {
+            text
+                .border(Color.blue)
+        } else {
+            text
         }
     }
 }
 
 struct Table: View {
     
-    let cells: [[Text]]
+    let cells: [[Cell]]
     
     func colorForIndex(idx: Int) -> Color {
         if idx.isMultiple(of: 2) {
