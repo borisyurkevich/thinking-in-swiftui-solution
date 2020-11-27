@@ -44,9 +44,24 @@ struct Cell<Content: View>: View {
     }
 }
 
+struct SelectedModifier: ViewModifier {
+    var selected: Bool
+    
+    func body(content: Content) -> some View {
+        if selected {
+            return content.border(Color.red)
+        } else {
+            return content.border(Color.clear)
+        }
+    }
+}
+
 struct Table: View {
     
     let cells: [[Cell<Text>]]
+    
+    @State var columnWidth: [Int: CGFloat] = [:]
+    @State var selectedCell: (Int, Int)? = nil // Selected row and column
     
     func colorForIndex(idx: Int) -> Color {
         if idx.isMultiple(of: 2) {
@@ -61,9 +76,9 @@ struct Table: View {
             .widthPreference(column: column)
             .frame(width: columnWidth[column], alignment: .leading)
             .padding(5)
+            .border(Color.purple)
+            .modifier(SelectedModifier(selected: row == selectedCell?.0 && column == selectedCell?.1))
     }
-    
-    @State var columnWidth: [Int: CGFloat] = [:]
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -71,6 +86,9 @@ struct Table: View {
                 HStack(alignment: .top) {
                     ForEach(self.cells[row].indices) { column in
                         self.cellFor(row: row, column: column)
+                            .onTapGesture {
+                                selectedCell = (row, column)
+                            }
                     }
                 }
                 .background(colorForIndex(idx: row))
@@ -79,6 +97,8 @@ struct Table: View {
         .onPreferenceChange(WidthPreference.self) { self.columnWidth = $0 }
     }
 }
+
+// MARK: Layout
 
 struct WidthPreference: PreferenceKey {
     
@@ -90,13 +110,24 @@ struct WidthPreference: PreferenceKey {
     }
 }
 
-
 extension View {
     func widthPreference(column: Int) -> some View {
         background(GeometryReader { proxy in
             Color.clear.preference(key: WidthPreference.self,
                                    value: [column: proxy.size.width])
         })
+    }
+}
+
+// MARK: Selection
+
+struct BoundsKey: PreferenceKey {
+    
+    static var defaultValue: Anchor<CGRect>? = nil
+        
+    static func reduce(value: inout Value,
+                       nextValue: () -> Value) {
+        value = value ?? nextValue()
     }
 }
 
