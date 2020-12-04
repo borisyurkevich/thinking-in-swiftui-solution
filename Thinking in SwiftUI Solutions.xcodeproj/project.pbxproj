@@ -20,6 +20,7 @@
 		A11CB27A2569D182008240DB /* Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB2782569D182008240DB /* Remote.swift */; };
 		A11CB27B2569D182008240DB /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CB2792569D182008240DB /* Photo.swift */; };
 		A1242CE4257A0F800093DB7F /* AnimatedWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1242CE3257A0F800093DB7F /* AnimatedWidgets.swift */; };
+		A1242CE8257A11050093DB7F /* BounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1242CE7257A11050093DB7F /* BounceAnimation.swift */; };
 		A181A15B256B70E200A098FC /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A181A15A256B70E200A098FC /* Badge.swift */; };
 		A18DE16D256DBDC80058F642 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18DE16C256DBDC80058F642 /* Table.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		A11CB2782569D182008240DB /* Remote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remote.swift; sourceTree = "<group>"; };
 		A11CB2792569D182008240DB /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		A1242CE3257A0F800093DB7F /* AnimatedWidgets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedWidgets.swift; sourceTree = "<group>"; };
+		A1242CE7257A11050093DB7F /* BounceAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceAnimation.swift; sourceTree = "<group>"; };
 		A181A15A256B70E200A098FC /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		A18DE16C256DBDC80058F642 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				A1242CE3257A0F800093DB7F /* AnimatedWidgets.swift */,
+				A1242CE7257A11050093DB7F /* BounceAnimation.swift */,
 			);
 			path = "Chapter 6";
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				A11CB2762569D106008240DB /* ViewUpdates.swift in Sources */,
 				A1242CE4257A0F800093DB7F /* AnimatedWidgets.swift in Sources */,
 				A11CB26E2569D00F008240DB /* Knob.swift in Sources */,
+				A1242CE8257A11050093DB7F /* BounceAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
