@@ -12,11 +12,19 @@ struct LineGraph: View {
     
     let linePoints: [CGFloat] = [0.1, 0.7, 0.3, 0.6, 0.45, 1.1]
     
+    @State var isVisible: Bool = false
+    
     var body: some View {
         LineGraphShape(points: linePoints)
+            .trim(from: 0, to: isVisible ? 1 : 0)
             .stroke(Color.red, lineWidth: 2)
             .border(Color.gray, width: 1)
             .padding()
+            .onAppear {
+                withAnimation(.easeInOut(duration: 4.0)) {
+                    isVisible = true
+                }
+            }
     }
 }
 
