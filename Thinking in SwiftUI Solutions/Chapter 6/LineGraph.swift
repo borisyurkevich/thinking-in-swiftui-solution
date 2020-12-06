@@ -6,33 +6,43 @@
 //
 
 import SwiftUI
-
-let linePoints: [CGFloat] = [0.1, 0.7, 0.3, 0.6, 0.45, 1.1]
+import os
 
 struct LineGraph: View {
     
+    let linePoints: [CGFloat] = [0.1, 0.7, 0.3, 0.6, 0.45, 1.1]
     
     var body: some View {
         LineGraphShape(points: linePoints)
             .stroke(Color.red, lineWidth: 2)
             .border(Color.gray, width: 1)
+            .padding()
     }
 }
 
 struct LineGraphShape: Shape {
     
     let points: [CGFloat]
+    let logger = Logger()
 
     func path(in rect: CGRect) -> Path {
-        
+                
+        let widthIncrement = rect.width / CGFloat(points.count)
+        var currentWidth: CGFloat = 0
         var lines: [CGPoint] = []
-        
+        let height = rect.height
         for point in points {
-            let x: CGFloat = rect.width / CGFloat(points.count)
-            let y: CGFloat = rect.height * point
-            lines.append(CGPoint(x: y, y: y))
+            
+            let x: CGFloat = currentWidth
+            currentWidth += widthIncrement
+            
+            let cocoaPoint = 1 - point // First, convert a point into the Cocoa coordinate system
+            let y: CGFloat =  height * cocoaPoint
+            
+            lines.append(CGPoint(x: x, y: y))
+            logger.log(level: .debug, "\(x),\(y)")
         }
-        
+                
         return Path { p in
             let start = CGPoint(x: 0, y: 0)
             p.move(to: start)
@@ -44,7 +54,7 @@ struct LineGraphShape: Shape {
 struct LineGraph_Previews: PreviewProvider {
     static var previews: some View {
         LineGraph()
+            .frame(width: 100, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             .previewLayout(.sizeThatFits)
-            .frame(width: 300, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
 }
